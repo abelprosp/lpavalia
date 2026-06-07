@@ -545,6 +545,80 @@ button {
   flex-shrink: 0;
 }
 
+.address-search__bar--demo {
+  pointer-events: none;
+  user-select: none;
+}
+
+.address-search__bar--demo:focus-within {
+  border-color: var(--color-border);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.address-search__display {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.address-search__typed {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.address-search__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 1px;
+  background: var(--color-primary);
+  animation: address-search-blink 1s step-end infinite;
+}
+
+@keyframes address-search-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.address-search__submit--demo {
+  cursor: default;
+  pointer-events: none;
+}
+
+.address-search__example--demo {
+  cursor: default;
+  pointer-events: none;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.address-search__example--active {
+  color: var(--color-primary-dark);
+  border-color: rgba(22, 163, 74, 0.35);
+  background: var(--color-primary-light);
+}
+
+.address-search__example--demo:hover {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+  background: transparent;
+}
+
+.address-search__example--active:hover {
+  color: var(--color-primary-dark);
+  border-color: rgba(22, 163, 74, 0.35);
+  background: var(--color-primary-light);
+}
+
 .address-search__input {
   flex: 1;
   min-width: 0;
