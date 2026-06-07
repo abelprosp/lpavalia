@@ -1,0 +1,16 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HomePage } from './pages/HomePage'
+import { ArticlePage } from './pages/ArticlePage'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/artigos/:slug" element={<ArticlePage />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
