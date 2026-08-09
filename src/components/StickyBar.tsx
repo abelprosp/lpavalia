@@ -1,5 +1,5 @@
 import { Sparkles } from 'lucide-react'
-import { APP_URL } from '../constants/app'
+import { SIGN_UP_URL } from '../constants/app'
 
 export function StickyBar() {
   return (
@@ -10,12 +10,12 @@ export function StickyBar() {
             <Sparkles size={18} strokeWidth={2} />
           </span>
           <p className="sticky-bar__text">
-            Saiba quanto vale seu imóvel com a{' '}
-            <strong>Avalia Imobe</strong>
+            Saiba o valor do imóvel e conecte-se ao{' '}
+            <strong>mercado da sua região</strong>
           </p>
         </div>
-        <a href={APP_URL} className="sticky-bar__btn">
-          Avaliar agora
+        <a href={SIGN_UP_URL} className="sticky-bar__btn">
+          Começar grátis
         </a>
       </div>
     </div>

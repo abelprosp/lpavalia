@@ -1,22 +1,38 @@
 import type { ReactNode } from 'react'
-import { Newspaper } from 'lucide-react'
-import { APP_URL } from '../constants/app'
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { PRICING_URL, SIGN_IN_URL, SIGN_UP_URL } from '../constants/app'
 import { Logo } from './Logo'
 import { ScrollReveal } from './ScrollReveal'
 
-const quickLinks = [
+interface FooterLinkItem {
+  label: string
+  href: string
+  external?: boolean
+}
+
+const quickLinks: FooterLinkItem[] = [
   { label: 'Início', href: '/' },
-  { label: 'Recursos', href: '/#plataforma' },
   { label: 'Como funciona', href: '/#como-funciona' },
-  { label: 'Agentes IA', href: '/#plataforma' },
-  { label: 'Contato', href: APP_URL, external: true },
+  { label: 'Para quem', href: '/#para-quem' },
+  { label: 'Plataforma', href: '/#plataforma' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
-const exploreLinks = [
-  { label: 'Ao vivo', href: APP_URL, external: true },
-  { label: 'Simulação WhatsApp', href: '/#plataforma' },
-  { label: 'Chamada à ação', href: APP_URL, external: true },
+const exploreLinks: FooterLinkItem[] = [
+  { label: 'Preços', href: '/#precos' },
+  { label: 'Todos os planos', href: PRICING_URL, external: true },
+  { label: 'Criar conta grátis', href: SIGN_UP_URL, external: true },
+  { label: 'Entrar', href: SIGN_IN_URL, external: true },
 ]
+
+function FooterLink({ label, href, external }: FooterLinkItem) {
+  if (external) {
+    return <a href={href}>{label}</a>
+  }
+
+  return <Link to={href}>{label}</Link>
+}
 
 function SocialIcon({ children, label, href }: { children: ReactNode; label: string; href: string }) {
   return (
@@ -33,16 +49,21 @@ export function Footer() {
         <div className="cta-banner">
           <div className="container cta-banner__inner">
             <h2 className="cta-banner__title">
-              Seu <span>acesso exclusivo</span> ao roadmap da Avalia Imobe em
-              construção
+              Comece <span>grátis hoje</span> e descubra o valor do seu próximo
+              negócio
             </h2>
             <div className="cta-banner__action">
-              <a href={APP_URL} className="cta-banner__btn">
-                <Newspaper size={18} strokeWidth={2} />
-                Acompanhar o roadmap
-              </a>
+              <div className="cta-banner__buttons">
+                <a href={SIGN_UP_URL} className="cta-banner__btn">
+                  Sou corretor
+                  <ArrowRight size={18} strokeWidth={2} />
+                </a>
+                <a href={SIGN_UP_URL} className="cta-banner__btn cta-banner__btn--ghost">
+                  Sou proprietário
+                </a>
+              </div>
               <p className="cta-banner__hint">
-                Participe das decisões e receba novidades em primeira mão.
+                Sem cartão para começar · Planos de corretor a partir de R$ 97/mês
               </p>
             </div>
           </div>
@@ -52,15 +73,16 @@ export function Footer() {
       <div className="footer__body">
         <div className="container footer__grid">
           <div className="footer__brand">
-            <a href="#" className="footer__logo">
+            <Link to="/" className="footer__logo">
               <Logo />
-            </a>
+            </Link>
             <p className="footer__description">
-              Um produto pensado para avaliação imobiliária com IA — clareza de
-              mercado e resultado onde você já conversa todos os dias.
+              Avaliação com IA, leads de proprietários e CRM no mesmo saldo de
+              créditos — para o corretor captar e fechar onde já trabalha todos os
+              dias.
             </p>
-            <a href={APP_URL} className="footer__cta-btn">
-              Fale conosco
+            <a href={SIGN_UP_URL} className="footer__cta-btn">
+              Criar conta grátis
             </a>
             <div className="footer__social">
               <SocialIcon label="Facebook" href="#">
@@ -86,7 +108,7 @@ export function Footer() {
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <FooterLink {...link} />
                 </li>
               ))}
             </ul>
@@ -97,7 +119,7 @@ export function Footer() {
             <ul>
               {exploreLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <FooterLink {...link} />
                 </li>
               ))}
             </ul>

@@ -53,7 +53,7 @@ export function useSEO({
     canonical.setAttribute('href', `${origin}${canonicalPath}`)
 
     return () => {
-      document.title = 'Avalia Imobe — Avaliação de imóveis com IA'
+      document.title = 'Avalia Imobe — Avaliação com IA, leads e CRM para corretores'
     }
   }, [title, description, keywords, canonicalPath, ogImage, ogType])
 }

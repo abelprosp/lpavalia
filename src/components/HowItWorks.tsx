@@ -4,18 +4,18 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal'
 const steps = [
   {
     image: images.howItWorks.steps.location,
-    title: 'Coloque a localização',
-    detail: 'Plano diretor + região',
+    title: 'Avalie o imóvel com IA',
+    detail: 'Comparáveis da região + análise das fotos · 1 crédito',
   },
   {
     image: images.howItWorks.steps.propertyInfo,
-    title: 'Preencha as informações do imóvel',
-    detail: 'Metragem, quartos e vagas',
+    title: 'Publique ou desbloqueie o lead',
+    detail: 'Proprietário publica · corretor desbloqueia por 2 créditos',
   },
   {
     image: images.howItWorks.steps.photos,
-    title: 'Suba as fotos do imóvel',
-    detail: 'Análise automática por IA',
+    title: 'Negocie no CRM',
+    detail: 'Funil, scoring de interesse e follow-up no WhatsApp',
   },
 ]
 
@@ -34,10 +34,10 @@ export function HowItWorks() {
           <div className="how-it-works__body">
             <ScrollReveal className="how-it-works__header">
               <span className="how-it-works__badge">Como funciona</span>
-              <h2 className="how-it-works__title">Simples e rápido</h2>
+              <h2 className="how-it-works__title">Da avaliação ao fechamento</h2>
               <p className="how-it-works__subtitle">
-                Em três passos você tem um laudo completo de avaliação pronto para
-                apresentar ao seu cliente.
+                Três passos que ligam o proprietário que quer saber o valor ao corretor
+                que quer captar — tudo no mesmo saldo de créditos.
               </p>
             </ScrollReveal>
 

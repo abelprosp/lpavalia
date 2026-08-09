@@ -2,12 +2,13 @@ import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { APP_URL } from '../constants/app'
+import { SIGN_IN_URL, SIGN_UP_URL } from '../constants/app'
 import { Logo } from './Logo'
 
 const navLinks = [
   { label: 'Como funciona', href: '/#como-funciona' },
-  { label: 'Plataforma', href: '/#plataforma' },
+  { label: 'Para quem', href: '/#para-quem' },
+  { label: 'Preços', href: '/#precos' },
   { label: 'FAQ', href: '/#faq' },
 ]
 
@@ -38,20 +39,20 @@ export function Header() {
             </Link>
           ))}
           <div className="header__actions-mobile">
-            <a href={APP_URL} className="header__login" onClick={() => setMenuOpen(false)}>
+            <a href={SIGN_IN_URL} className="header__login" onClick={() => setMenuOpen(false)}>
               Entrar
             </a>
-            <a href={APP_URL} className="header__signup" onClick={() => setMenuOpen(false)}>
+            <a href={SIGN_UP_URL} className="header__signup" onClick={() => setMenuOpen(false)}>
               Começar grátis
             </a>
           </div>
         </nav>
 
         <div className="header__actions">
-          <a href={APP_URL} className="header__login">
+          <a href={SIGN_IN_URL} className="header__login">
             Entrar
           </a>
-          <a href={APP_URL} className="header__signup">
+          <a href={SIGN_UP_URL} className="header__signup">
             Começar grátis
           </a>
         </div>

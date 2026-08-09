@@ -5,29 +5,34 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal'
 
 const faqs = [
   {
-    question: 'Como a Avalia Imobe calcula o valor do imóvel?',
-    answer:
-      'Nossa IA analisa comparativos de mercado na região, dados do plano diretor, características do imóvel e as fotos enviadas para gerar uma estimativa precisa com margem de confiança.',
-  },
-  {
     question: 'Preciso ser corretor para usar a plataforma?',
     answer:
-      'A Avalia Imobe foi desenvolvida para corretores de imóveis, mas avaliadores, construtoras e investidores também podem se beneficiar das ferramentas de avaliação com IA.',
+      'Não. Proprietários usam a Avalia Imobe de graça, com 3 avaliações por mês e sem cartão de crédito. Depois de avaliar, você decide se quer publicar o imóvel para os corretores que atuam na sua região.',
   },
   {
-    question: 'Posso usar pelo WhatsApp?',
+    question: 'Quanto custa desbloquear um lead de proprietário?',
     answer:
-      'Sim! Você pode iniciar uma avaliação diretamente pelo WhatsApp, enviando o endereço, informações e fotos do imóvel. O laudo completo é gerado e enviado na conversa.',
+      'Dois créditos por lead. Uma avaliação com IA consome um crédito. É o mesmo saldo para as duas coisas, então você escolhe onde gastar conforme a semana: avaliar mais imóveis ou abrir mais contatos.',
   },
   {
-    question: 'Os laudos têm validade jurídica?',
+    question: 'Como funcionam os créditos e o pagamento?',
     answer:
-      'Os laudos gerados servem como base técnica para negociações e apresentações. Para fins jurídicos formais, recomendamos complementar com laudo de engenheiro ou avaliador credenciado.',
+      'A assinatura mensal libera um saldo de créditos que você usa em avaliações e leads, e o pagamento pode ser feito por PIX ou cartão. Não há fidelidade — você pode trocar de plano ou cancelar quando quiser.',
   },
   {
-    question: 'Meus dados estão seguros?',
+    question: 'A avaliação substitui um laudo de avaliação com CRECI?',
     answer:
-      'Utilizamos criptografia de ponta a ponta e seguimos as melhores práticas de segurança. Seus dados e laudos são armazenados de forma segura e nunca compartilhados com terceiros.',
+      'Não. O que geramos é uma ferramenta comercial: serve para precificar, defender o preço com o cliente e negociar com base em comparativos de mercado. Para laudo com validade legal — perícia, inventário, financiamento ou processo judicial —, procure um avaliador credenciado ou engenheiro.',
+  },
+  {
+    question: 'Como a Avalia Imobe calcula o valor do imóvel?',
+    answer:
+      'Cruzamos comparativos de mercado na região, dados do plano diretor a partir do endereço, as características informadas e a análise das fotos enviadas. O resultado sai como faixa de valor, com os comparáveis que sustentaram o cálculo.',
+  },
+  {
+    question: 'Meus dados e os dos meus clientes estão seguros?',
+    answer:
+      'Seus dados trafegam criptografados e ficam armazenados de forma segura. Contatos, avaliações e histórico do CRM são seus e não são compartilhados com outros corretores nem vendidos a terceiros.',
   },
 ]
 
@@ -80,11 +85,11 @@ export function FAQ() {
         <ScrollReveal className="faq__header">
           <h2 className="faq__title">
             <span>Perguntas</span> frequentes sobre{' '}
-            <span>avaliações</span>
+            <span>créditos e leads</span>
           </h2>
           <p className="faq__subtitle">
-            Tudo o que você precisa saber sobre a plataforma, laudos gerados por IA
-            e segurança dos seus dados.
+            Como funcionam as avaliações, os leads de proprietários e a cobrança — e o
+            que a plataforma não se propõe a fazer.
           </p>
         </ScrollReveal>
 

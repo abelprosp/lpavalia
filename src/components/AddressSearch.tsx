@@ -74,7 +74,7 @@ export function AddressSearch() {
     <section className="address-search" aria-hidden="true">
       <div className="container address-search__inner">
         <ScrollReveal>
-          <p className="address-search__eyebrow">Veja como funciona</p>
+          <p className="address-search__eyebrow">Veja a avaliação em ação</p>
           <h2 className="address-search__title">Onde fica o imóvel?</h2>
 
           <div className="address-search__bar address-search__bar--demo">

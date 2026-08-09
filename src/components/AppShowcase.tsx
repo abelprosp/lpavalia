@@ -1,19 +1,21 @@
-import { Zap } from 'lucide-react'
-import { APP_URL } from '../constants/app'
+import { Coins } from 'lucide-react'
+import { SIGN_UP_URL } from '../constants/app'
 import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal'
 import { SecurityWordAnimation } from './SecurityWordAnimation'
 
 const stats = [
-  { value: '2min', label: 'Laudo pronto' },
-  { value: '94%', label: 'Precisão IA' },
-  { value: '12+', label: 'Comparativos' },
+  { value: '1 crédito', label: 'por avaliação' },
+  { value: '2 créditos', label: 'por lead desbloqueado' },
+  { value: 'R$ 97', label: 'plano inicial por mês' },
 ]
 
 const features = [
+  { title: 'Avaliações', accent: 'por IA', visual: 'report' },
+  { title: 'Leads', accent: 'de proprietários da região', visual: 'leads' },
+  { title: 'CRM', accent: 'com scoring de interesse', visual: 'crm' },
+  { title: 'Mapa + FoxAi', accent: 'plano diretor automático', visual: 'map' },
   { title: 'WhatsApp', accent: 'integrado', visual: 'whatsapp' },
-  { title: 'Laudo completo', accent: 'por IA', visual: 'report' },
   { title: 'Dados', accent: 'protegidos', visual: 'security' },
-  { title: 'Plano diretor', accent: 'automático', visual: 'map' },
 ]
 
 export function AppShowcase() {
@@ -22,7 +24,7 @@ export function AppShowcase() {
       <div className="container platform__inner">
         <ScrollReveal className="platform__header">
           <h2 className="platform__heading">
-            Tudo para avaliar imóveis com <span>inteligência</span>
+            Avaliar, captar e fechar no <span>mesmo lugar</span>
           </h2>
         </ScrollReveal>
 
@@ -31,9 +33,9 @@ export function AppShowcase() {
             <StaggerItem>
               <div className="bento-card bento-card--compact">
                 <p className="bento-card__lead">
-                  Muito mais <span>rápido</span>
+                  Créditos <span>transparentes</span>
                 </p>
-                <Zap size={28} className="bento-card__icon-floating" strokeWidth={1.5} />
+                <Coins size={28} className="bento-card__icon-floating" strokeWidth={1.5} />
               </div>
             </StaggerItem>
 
@@ -71,8 +73,8 @@ export function AppShowcase() {
         </StaggerContainer>
 
         <ScrollReveal className="platform__cta" delay={0.2}>
-          <a href={APP_URL} className="btn btn--primary btn--lg">
-            Testar a plataforma
+          <a href={SIGN_UP_URL} className="btn btn--primary btn--lg">
+            Criar conta grátis
           </a>
         </ScrollReveal>
       </div>

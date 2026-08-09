@@ -1,10 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import terrenoImg from '../assets/terreno.png'
 import casaImg from '../assets/casa.png'
 import apartamentoImg from '../assets/apartamento.png'
-import { APP_URL } from '../constants/app'
+import { SIGN_UP_URL } from '../constants/app'
 
 const propertyImages = [
   {
@@ -41,7 +42,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <span className="hero__line">
-            <span className="hero__word">Seu</span>
+            <span className="hero__word">Avalie, capte</span>
             <span className="hero__pill" aria-label={propertyImages[currentIndex].label}>
               <AnimatePresence mode="wait">
                 <motion.img
@@ -56,12 +57,23 @@ export function Hero() {
                 />
               </AnimatePresence>
             </span>
-            <span className="hero__word">imóvel</span>
+            <span className="hero__word">e feche</span>
           </span>
           <span className="hero__line hero__line--second">
-            avaliado da maneira certa
+            com IA no fluxo do corretor
           </span>
         </motion.h1>
+
+        <motion.p
+          className="hero__subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          Corretores usam avaliações, leads de proprietários e CRM num só saldo de
+          créditos. Proprietários descobrem o valor do imóvel e publicam para os
+          corretores da região.
+        </motion.p>
 
         <motion.div
           className="hero__actions"
@@ -69,16 +81,28 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          <a href={APP_URL} className="btn btn--primary btn--pill">
-            Testar agora mesmo
+          <a href={SIGN_UP_URL} className="btn btn--primary btn--pill">
+            Sou corretor
           </a>
-          <a href="#plataforma" className="hero__secondary-cta">
-            Ver demonstração
+          <a href={SIGN_UP_URL} className="btn btn--outline btn--pill">
+            Sou proprietário
+          </a>
+          <Link to="/#como-funciona" className="hero__secondary-cta">
+            Ver como funciona
             <span className="hero__arrow-circle">
               <ArrowUpRight size={16} />
             </span>
-          </a>
+          </Link>
         </motion.div>
+
+        <motion.p
+          className="hero__microcopy"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          Planos a partir de R$ 97/mês · 3 avaliações grátis por mês para proprietários
+        </motion.p>
       </div>
     </section>
   )
